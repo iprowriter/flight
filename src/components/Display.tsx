@@ -54,7 +54,10 @@ export default function Display() {
               <Grid><p>Leipzig</p></Grid>
             </Grid>
             
-            <Grid item xs={6}>
+            <Grid item xs={6}
+          
+            
+            >
               <Grid><p><b>12:30</b></p></Grid>
               <Grid><p>FRA</p></Grid>
               <Grid><p>Frankfurt1</p></Grid>

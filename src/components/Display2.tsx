@@ -19,7 +19,7 @@ export default function Display2() {
     <StyledContainer>
       <Paper elevation={2}>
         <Grid container spacing={2}>
-          <Grid item xs={12} md={2} lg={2} bgcolor="red">
+          <Grid item xs={12} md={2} lg={2} borderRight={2} bgcolor="">
             <Box>
               <Grid
                 container
@@ -31,68 +31,83 @@ export default function Display2() {
                   <Grid item xs={12}>
                     <img height={50} width={50} src={data[2].imageUrl} alt="" />
                   </Grid>
-                  <Grid item xs={12}>
+                  <Grid item xs={12} paddingTop={3}>
                     Lufthansa
                   </Grid>
                 </Box>
               </Grid>
             </Box>
           </Grid>
-          <Grid item xs={12} md={7} lg={7} bgcolor="blue">
+          <Grid item xs={12} md={7} lg={7} borderRight={2} bgcolor="">
             <Box>
               <Grid container>
-                <Grid item xs={12} md={6} lg={6}>
-                  <Grid>
-                    <p>
-                      <b>12:30</b>
-                    </p>
-                  </Grid>
-                  <Grid>
-                    <p>FRA</p>
-                  </Grid>
-                  <Grid>
-                    <p>Frankfurt1</p>
-                  </Grid>
+                <Grid
+                  item
+                  xs={12}
+                  md={6}
+                  lg={6}
+                  container
+                  direction="column"
+                  justifyContent="center"
+                  alignItems="center"
+                >
+                  <Box>
+                    <Grid>
+                      <p>
+                        <b>12:30</b>
+                      </p>
+                    </Grid>
+                    <Grid>
+                      <p>FRA</p>
+                    </Grid>
+                    <Grid>
+                      <p>Frankfurt1</p>
+                    </Grid>
+                  </Box>
                 </Grid>
-                <Grid item xs={12} md={6} lg={6} container 
-                direction="column"
-                justifyContent="center"
-                alignItems="center"
-          
-                 >
-                  <Grid >
-                    <p >
-                      <b>12:30</b>
-                    </p>
-                  </Grid>
-                  <Grid>
-                    <p>FRA</p>
-                  </Grid>
-                  <Grid>
-                    <p>Frankfurt1</p>
-                  </Grid>
+                <Grid
+                  item
+                  xs={12}
+                  md={6}
+                  lg={6}
+                  container
+                  direction="column"
+                  justifyContent="center"
+                  alignItems="center"
+                >
+                  <Box>
+                    <Grid>
+                      <p>
+                        <b>12:30</b>
+                      </p>
+                    </Grid>
+                    <Grid>
+                      <p>FRA</p>
+                    </Grid>
+                    <Grid>
+                      <p>Frankfurt1</p>
+                    </Grid>
+                  </Box>
                 </Grid>
               </Grid>
             </Box>
           </Grid>
-          <Grid item xs={12} md={3} lg={3} bgcolor="green">
+          <Grid
+            item
+            xs={12}
+            md={3}
+            lg={3}
+            bgcolor=""
+            container
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            padding={2}
+          >
             <Box>
-              <Grid>
-                <Grid item xs={12}></Grid>
-                <Grid item xs={12}>
-                  <Box
-                    display="flex"
-                    justifyContent="center"
-                    alignItems="center"
-                    padding={2}
-                  >
-                    <Button variant="contained" fullWidth>
-                      Select Flight
-                    </Button>
-                  </Box>
-                </Grid>
-                <Grid item xs={12}></Grid>
-              </Grid>
+              <Button variant="contained" fullWidth>
+                Select Flight
+              </Button>
             </Box>
           </Grid>
         </Grid>
