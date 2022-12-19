@@ -46,9 +46,20 @@ export default function Display() {
               </Grid>
             </Box>
           </Grid>
-          <Grid item xs={7} bgcolor="blue">
-            {" "}
-            <Box></Box> item 2
+          <Grid item xs={7} bgcolor="blue"> 
+          <Grid container>
+            <Grid item xs={6}>
+              <Grid><p><b>08:00</b></p></Grid>
+              <Grid><p>LEJ</p></Grid>
+              <Grid><p>Leipzig</p></Grid>
+            </Grid>
+            
+            <Grid item xs={6}>
+              <Grid><p><b>12:30</b></p></Grid>
+              <Grid><p>FRA</p></Grid>
+              <Grid><p>Frankfurt1</p></Grid>
+            </Grid>
+          </Grid>
           </Grid>
           <Grid item xs={3} bgcolor="green" justifyContent="center">
             <Box
