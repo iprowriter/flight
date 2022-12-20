@@ -38,7 +38,7 @@ export default function Display2() {
               </Grid>
             </Box>
           </Grid>
-          <Grid item xs={12} md={7} lg={7} borderRight={2} bgcolor="">
+          <Grid item xs={12} md={7} lg={7} borderRight={2}>
             <Box>
               <Grid container>
                 <Grid
@@ -104,7 +104,7 @@ export default function Display2() {
             alignItems="center"
             padding={2}
           >
-            <Box>
+            <Box sx={{ width: '100%' }}> 
               <Button variant="contained" fullWidth>
                 Select Flight
               </Button>
