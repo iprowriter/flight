@@ -1,9 +1,8 @@
 import React from 'react';
 import Header from './components/Header'
-import Destinations from './components/Destination';
-import DisplayFlights from './components/DisplayFlights';
+import SearchDestination from './components/SearchDestination';
 import Display from './components/Display';
-import Display2 from './components/Display2';
+import DestinationList from './components/DestinationList';
 
 
 function App() {
@@ -11,9 +10,9 @@ function App() {
     <>
     <Header />
      <p>one task per day</p>
-     <Destinations />
-     <DisplayFlights/>
-     <Display2/>
+     <SearchDestination/>
+     <DestinationList />
+     <Display/>
     </>
   );
 }

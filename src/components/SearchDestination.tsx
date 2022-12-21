@@ -3,6 +3,8 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button'
 import { styled } from '@mui/material/styles';
+import data from "../data.json";
+
 
 const StyledBox = styled(Box)`
   background-color: aliceblue;
@@ -13,7 +15,7 @@ const StyledBox = styled(Box)`
 
 
 
-export default function Destinations() {
+export default function SearchDestination() {
   return (
     <StyledBox>
       <Box
