@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Getting Started with this Flight React App
 
 This is a new project that is still under construction. I'm currently building a flight booking website.
 
