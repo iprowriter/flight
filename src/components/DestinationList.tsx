@@ -4,7 +4,6 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import { styled } from "@mui/material/styles";
 import { Button, Container, Grid } from "@mui/material";
-import data from "../data.json";
 
 const StyledContainer = styled(Container)`
   margin-top: 10px;

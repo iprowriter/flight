@@ -3,8 +3,7 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button'
 import { styled } from '@mui/material/styles';
-import data from "../data.json";
-
+import DestinationList from './DestinationList';
 
 const StyledBox = styled(Box)`
   background-color: aliceblue;
@@ -16,6 +15,9 @@ const StyledBox = styled(Box)`
 
 
 export default function SearchDestination() {
+  const [focus, setFocus] = React.useState(false)
+
+  
   return (
     <StyledBox>
       <Box
@@ -26,10 +28,12 @@ export default function SearchDestination() {
       noValidate
       autoComplete="off"
     >
-      <TextField id="filled-basic" label="Depart From" variant="filled" />
-      <TextField id="filled-basic" label="Arrive At" variant="filled" />
-      <Button variant="contained" sx={{height: '7ch'}}>Search Flights</Button>
+      <TextField id="filled-basic" label="Depart From" variant="filled" onFocus={() => setFocus(true)} />
+      <TextField id="filled-basic" label="Arrive At" variant="filled" onFocus={() => setFocus(true)}/>
+      <Button variant="contained" sx={{height: '7ch'}} onClick={() => setFocus(false)} >Search Flights</Button>
     </Box>
+    {focus &&  <DestinationList/>
+}
     </StyledBox>
   );
 }
