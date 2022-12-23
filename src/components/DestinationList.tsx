@@ -36,8 +36,7 @@ export default function DestinationList(props: any) {
 
   const handleSelectedCountry = (e: any) => {
     const value = e.target.value;
-    console.log(value);
-    props.getCountry(value);
+    props.getDestination(value);
   };
 
   return (

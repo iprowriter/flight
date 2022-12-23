@@ -16,29 +16,20 @@ const StyledBox = styled(Box)`
 export default function SearchDestination() {
   const [focusOne, setFocusOne] = React.useState(false);
   const [focusTwo, setFocusTwo] = React.useState(false);
-  const [country, setCountry] = React.useState("");
+  const [destination, setDestination] = React.useState("");
   const [arrival, setArrival] = React.useState("");
 
   //function gets the  value from a child component (DestinationList)
-  const getSelectedCountry = (value: string) => {
-    console.log(value, "from f");
-    setCountry(value);
+  const getDestinationCountry = (value: string) => {
+    setDestination(value);
   };
 
   //function gets the value frorm a child component (ArrivalList)
   const getArrivalCountry = (value: string) => {
-    console.log(value, "from arrival parent");
     setArrival(value);
   };
 
-  //function that turns focus on or off to avoid two Textfield being focused at the same time
-  const handleFocusState1 = () => {
-    setFocusTwo(false);
-  };
 
-  const handleFocusState2 = () => {
-    setFocusOne(false);
-  };
 
   return (
     <StyledBox>
@@ -56,9 +47,9 @@ export default function SearchDestination() {
           variant="filled"
           onFocus={() => {
             setFocusOne(true);
-            handleFocusState1();
+            setFocusTwo(false);
           }}
-          value={country}
+          value={destination}
         />
         <TextField
           id="filled-basic"
@@ -66,7 +57,7 @@ export default function SearchDestination() {
           variant="filled"
           onFocus={() => {
             setFocusTwo(true);
-            handleFocusState2();
+            setFocusOne(false);
           }}
           value={arrival}
         />
@@ -74,14 +65,14 @@ export default function SearchDestination() {
           variant="contained"
           sx={{ height: "7ch" }}
           onClick={() => {
-            handleFocusState1();
-            handleFocusState2();
+            setFocusOne(false);
+            setFocusTwo(false);
           }}
         >
           Search Flights
         </Button>
       </Box>
-      {focusOne && <DestinationList getCountry={getSelectedCountry} />}
+      {focusOne && <DestinationList getDestination={getDestinationCountry} />}
       {focusTwo && <ArrivalList getArrival={getArrivalCountry} />}
     </StyledBox>
   );

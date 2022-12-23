@@ -36,7 +36,6 @@ export default function ArrivalList(props: any) {
 
   const handleSelectedCountry = (e: any) => {
     const value = e.target.value;
-    console.log(value, "from arrival");
     props.getArrival(value);
   };
 
