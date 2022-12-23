@@ -29,6 +29,18 @@ export default function SearchDestination() {
     setArrival(value);
   };
 
+  //function that shows the value of both destination and arrival countries
+  const getDestinationAndArrival = () => {
+    if (destination === "") {
+      alert("please add destination")
+    } else if (arrival === "") {
+      alert("please add arrival")
+    }  else {
+      alert("success")
+    }
+    console.log(destination, arrival)
+  }
+
 
 
   return (
@@ -67,6 +79,7 @@ export default function SearchDestination() {
           onClick={() => {
             setFocusOne(false);
             setFocusTwo(false);
+            getDestinationAndArrival();
           }}
         >
           Search Flights
