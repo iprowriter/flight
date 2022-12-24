@@ -1,46 +1,40 @@
 import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
 import { styled } from "@mui/material/styles";
-import { Button, Container, Grid, List, ListItem, Typography } from "@mui/material";
+import {
+  Button,
+  Container,
+  Grid,
+  List,
+  ListItem,
+  Typography,
+} from "@mui/material";
 import data from "../data.json";
-
 
 const StyledContainer = styled(Container)`
   margin-top: 50px;
   padding: 2rem;
-
 `;
 
 export default function Display() {
-  
-  let selectedDestination = "Germany"
+  let selectedDestination = "Nigeria";
 
-
-  let filteredDestination: any = data.filter((value) => {
-    return value.name.toLowerCase().includes(selectedDestination.toLowerCase());
-  });
-
- 
-
-  let fil: any = data.map((item) => {
-    return item.country.filter((value) => {
-       value.name.toLowerCase().includes(selectedDestination.toLowerCase());
+  const filteredArray = data
+    .filter((item) =>
+      item.country.some((item) => item.name === selectedDestination)
+    )
+    .map((item) => {
+      let n = Object.assign({}, item, {
+        query: item.country.filter(
+          (query) => query.name === selectedDestination
+        ),
+      });
+      return n;
     });
-  })
-
-
-
-
-  
-
-
-  
- 
-
-
-
 
  
+
+  console.log("ke is:", filteredArray)
 
   return (
     <StyledContainer>
@@ -80,15 +74,15 @@ export default function Display() {
                 >
                   <Box>
                     <Grid>
-                      <Typography variant="h4">
-                        12:30
-                      </Typography>
+                      <Typography variant="h4">12:30</Typography>
                     </Grid>
                     <Grid>
                       <Typography>FRA</Typography>
                     </Grid>
                     <Grid>
-                      <Typography><b>Frankfurt</b></Typography>
+                      <Typography>
+                        <b>Frankfurt</b>
+                      </Typography>
                     </Grid>
                   </Box>
                 </Grid>
@@ -104,15 +98,15 @@ export default function Display() {
                 >
                   <Box>
                     <Grid>
-                    <Typography variant="h4" >
-                        18:30
-                      </Typography>
+                      <Typography variant="h4">18:30</Typography>
                     </Grid>
                     <Grid>
                       <Typography>LON</Typography>
                     </Grid>
                     <Grid>
-                      <Typography><b>London</b></Typography>
+                      <Typography>
+                        <b>London</b>
+                      </Typography>
                     </Grid>
                   </Box>
                 </Grid>
@@ -131,8 +125,12 @@ export default function Display() {
             alignItems="center"
             padding={2}
           >
-            <Box sx={{ width: '100%' }}> 
-              <Button variant="contained"  sx={{ borderRadius: '20px' }} fullWidth>
+            <Box sx={{ width: "100%" }}>
+              <Button
+                variant="contained"
+                sx={{ borderRadius: "20px" }}
+                fullWidth
+              >
                 Select Flight
               </Button>
             </Box>
@@ -140,13 +138,7 @@ export default function Display() {
         </Grid>
       </Paper>
       <Box>
-        <List>
-          {fil.map((item: any) => (
-            <ListItem key={item.id} >
-              {item.name}
-            </ListItem>
-          ))}
-        </List>
+        <List>{}</List>
       </Box>
     </StyledContainer>
   );
