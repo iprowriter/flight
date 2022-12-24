@@ -1,7 +1,7 @@
 import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
 import { styled } from "@mui/material/styles";
-import { Button, Container, Grid, Typography } from "@mui/material";
+import { Button, Container, Grid, List, ListItem, Typography } from "@mui/material";
 import data from "../data.json";
 
 
@@ -11,12 +11,36 @@ const StyledContainer = styled(Container)`
 
 `;
 
-export default function Display2() {
-  const today = new Date();
-  const time = today.getHours() + ":" + today.getMinutes();
+export default function Display() {
+  
+  let selectedDestination = "Germany"
 
-  console.log(data[1].prices[0]);
-  console.log(time);
+
+  let filteredDestination: any = data.filter((value) => {
+    return value.name.toLowerCase().includes(selectedDestination.toLowerCase());
+  });
+
+ 
+
+  let fil: any = data.map((item) => {
+    return item.country.filter((value) => {
+       value.name.toLowerCase().includes(selectedDestination.toLowerCase());
+    });
+  })
+
+
+
+
+  
+
+
+  
+ 
+
+
+
+
+ 
 
   return (
     <StyledContainer>
@@ -115,6 +139,15 @@ export default function Display2() {
           </Grid>
         </Grid>
       </Paper>
+      <Box>
+        <List>
+          {fil.map((item: any) => (
+            <ListItem key={item.id} >
+              {item.name}
+            </ListItem>
+          ))}
+        </List>
+      </Box>
     </StyledContainer>
   );
 }
