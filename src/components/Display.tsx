@@ -10,7 +10,9 @@ import {
   Typography,
 } from "@mui/material";
 import data from "../data.json";
-import { margin } from "@mui/system";
+import { flightData } from "../flightData";
+
+
 
 const StyledContainer = styled(Container)`
   margin-top: 20px;
@@ -43,11 +45,13 @@ export default function Display() {
  
 
   console.log("ke is:", filteredArray)
+  console.log(flightData, "ss")
+
 
   return (
     <StyledContainer>
       {
-        filteredArray.map((item) => (
+        flightData.map((item) => (
           <Paper elevation={2} sx={{ marginTop: "45px" }}>
         <Grid container spacing={2}>
           <Grid item xs={12} md={2} lg={2} borderRight={2} bgcolor="">
@@ -60,7 +64,7 @@ export default function Display() {
               >
                 <Box>
                   <Grid item xs={12}>
-                    <img height={50} width={50} src={data[2].imageUrl} alt="" />
+                    <img height={50} width={50} src={item.imageUrl} alt="" />
                   </Grid>
                   <Grid item xs={12} paddingTop={3}>
                     {item.name}
@@ -84,20 +88,15 @@ export default function Display() {
                 >
                   <Box>
                     <Grid>
-                      <Typography variant="h4">12:30</Typography>
+                      <Typography variant="h4">{item.departureTime} </Typography>
                     </Grid>
                     <Grid>
-                      <Typography>FRA</Typography>
+                      <Typography>{item.code + item.flightCode} </Typography>
                     </Grid>
                     <Grid>
                       <Typography>
                         <b>{
-                          filteredArray.map((item) => {
-                            let n = random(item.country.map((item) => item.name))
-                            console.log("value of n: ", n)
-                            //console.log("random n is: ", random(n))
-                            return n
-                          })
+                          item.departureCity
                           }</b>
                       </Typography>
                     </Grid>
