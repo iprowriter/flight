@@ -33,6 +33,13 @@ export default function Display() {
       return n;
     });
 
+    const array = [10, 34, 94, 534, 343435, 554, 14343, 3, 1, 2, 3, 4]
+
+    function random(a: any){
+      return a[Math.floor(Math.random() * a.length)]
+    }
+
+
  
 
   console.log("ke is:", filteredArray)
@@ -84,7 +91,14 @@ export default function Display() {
                     </Grid>
                     <Grid>
                       <Typography>
-                        <b>Frankfurt</b>
+                        <b>{
+                          filteredArray.map((item) => {
+                            let n = random(item.country.map((item) => item.name))
+                            console.log("value of n: ", n)
+                            //console.log("random n is: ", random(n))
+                            return n
+                          })
+                          }</b>
                       </Typography>
                     </Grid>
                   </Box>
