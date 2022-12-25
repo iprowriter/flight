@@ -10,14 +10,15 @@ import {
   Typography,
 } from "@mui/material";
 import data from "../data.json";
+import { margin } from "@mui/system";
 
 const StyledContainer = styled(Container)`
-  margin-top: 50px;
+  margin-top: 20px;
   padding: 2rem;
 `;
 
 export default function Display() {
-  let selectedDestination = "Nigeria";
+  let selectedDestination = "Qatar";
 
   const filteredArray = data
     .filter((item) =>
@@ -38,7 +39,9 @@ export default function Display() {
 
   return (
     <StyledContainer>
-      <Paper elevation={2}>
+      {
+        filteredArray.map((item) => (
+          <Paper elevation={2} sx={{ marginTop: "45px" }}>
         <Grid container spacing={2}>
           <Grid item xs={12} md={2} lg={2} borderRight={2} bgcolor="">
             <Box>
@@ -53,7 +56,7 @@ export default function Display() {
                     <img height={50} width={50} src={data[2].imageUrl} alt="" />
                   </Grid>
                   <Grid item xs={12} paddingTop={3}>
-                    Lufthansa
+                    {item.name}
                   </Grid>
                 </Box>
               </Grid>
@@ -128,6 +131,7 @@ export default function Display() {
             <Box sx={{ width: "100%" }}>
               <Button
                 variant="contained"
+                color="success"
                 sx={{ borderRadius: "20px" }}
                 fullWidth
               >
@@ -137,9 +141,8 @@ export default function Display() {
           </Grid>
         </Grid>
       </Paper>
-      <Box>
-        <List>{}</List>
-      </Box>
+        ))
+      }
     </StyledContainer>
   );
 }
