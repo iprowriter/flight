@@ -6,6 +6,7 @@ import { styled } from "@mui/material/styles";
 import DestinationList from "./DestinationList";
 import ArrivalList from "./ArrivalList";
 
+
 const StyledBox = styled(Box)`
   background-color: aliceblue;
   color: darkslategray;
@@ -18,6 +19,8 @@ export default function SearchDestination() {
   const [focusTwo, setFocusTwo] = React.useState(false);
   const [destination, setDestination] = React.useState("");
   const [arrival, setArrival] = React.useState("");
+
+
 
   //function gets the  value from a child component (DestinationList)
   const getDestinationCountry = (value: string) => {
