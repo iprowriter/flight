@@ -8,22 +8,18 @@ import { Button, Container, Grid } from "@mui/material";
 import { flightData } from "../flightData";
 import { iFlightData } from "../common/interfaces";
 
-
-
 const StyledContainer = styled(Container)`
   margin-top: 10px;
   padding: 2rem;
 `;
 
-export default function DestinationList(props: any) {
- 
-
-  //this accepts data API as paramater, check for all destination cities ...
+export default function DepatureList(props: any) {
+  //this accepts data API as paramater, check for all departure cities ...
   //..and return an array that contains unique cities.
   // (no city should appear twice)
-  function destinationCity(data: iFlightData[]) {
+  function departureCity(data: iFlightData[]) {
     let allCities = data.map((item: any) => {
-      return item.destinationCity;
+      return item.departureCity;
     });
     let uniqueCities: string[] = [];
     allCities.map((item: any) => {
@@ -34,8 +30,7 @@ export default function DestinationList(props: any) {
     return uniqueCities;
   }
 
-  console.log(destinationCity(flightData));
-
+  console.log(departureCity(flightData));
 
   const handleSelectedCountry = (e: any) => {
     const value = e.target.value;
@@ -48,7 +43,7 @@ export default function DestinationList(props: any) {
         <Box>
           <List>
             <Grid container direction="row">
-              {destinationCity(flightData).map((item, index) => (
+              {departureCity(flightData).map((item, index) => (
                 <Grid item xs={6} md={4} lg={4} key={index}>
                   <ListItem>
                     <Button onClick={handleSelectedCountry} value={item}>

@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { styled } from "@mui/material/styles";
-import DestinationList from "./DestinationList";
+import DepatureList from "./DepartureList";
 import ArrivalList from "./ArrivalList";
 
 
@@ -22,7 +22,7 @@ export default function SearchDestination() {
 
 
 
-  //function gets the  value from a child component (DestinationList)
+  //function gets the  value from a child component (DepatureList)
   const getDestinationCountry = (value: string) => {
     setDestination(value);
   };
@@ -88,7 +88,7 @@ export default function SearchDestination() {
           Search Flights
         </Button>
       </Box>
-      {focusOne && <DestinationList getDestination={getDestinationCountry} />}
+      {focusOne && <DepatureList getDestination={getDestinationCountry} />}
       {focusTwo && <ArrivalList getArrival={getArrivalCountry} />}
     </StyledBox>
   );
