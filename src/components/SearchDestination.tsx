@@ -5,6 +5,9 @@ import Button from "@mui/material/Button";
 import { styled } from "@mui/material/styles";
 import DepatureList from "./DepartureList";
 import ArrivalList from "./ArrivalList";
+import { useDispatch } from 'react-redux'
+import { userDeparture } from "../redux/slices/flightSelection";
+
 
 
 const StyledBox = styled(Box)`
@@ -20,11 +23,13 @@ export default function SearchDestination() {
   const [destination, setDestination] = React.useState("");
   const [arrival, setArrival] = React.useState("");
 
+  const  dispatch = useDispatch();
 
 
   //function gets the  value from a child component (DepatureList)
   const getDestinationCountry = (value: string) => {
     setDestination(value);
+    dispatch(userDeparture(value))
   };
 
   //function gets the value frorm a child component (ArrivalList)
