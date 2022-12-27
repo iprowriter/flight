@@ -6,7 +6,7 @@ import { styled } from "@mui/material/styles";
 import DepatureList from "./DepartureList";
 import ArrivalList from "./ArrivalList";
 import { useDispatch } from 'react-redux'
-import { userDeparture } from "../redux/slices/flightSelection";
+import { userDeparture,  userDestination } from "../redux/slices/flightSelection";
 
 
 
@@ -26,15 +26,16 @@ export default function SearchDestination() {
   const  dispatch = useDispatch();
 
 
-  //function gets the  value from a child component (DepatureList)
+  //function gets the  value from a child component (DepatureList) and save the  value on Redux
   const getDestinationCountry = (value: string) => {
     setDestination(value);
     dispatch(userDeparture(value))
   };
 
-  //function gets the value frorm a child component (ArrivalList)
+  //function gets the value frorm a child component (ArrivalList) and save the  value on Redux
   const getArrivalCountry = (value: string) => {
     setArrival(value);
+    dispatch(userDestination(value))
   };
 
   //function that shows the value of both destination and arrival countries
