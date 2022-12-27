@@ -52,6 +52,7 @@ export default function SearchDestination() {
 
 
 
+
   return (
     <StyledBox>
       <Box

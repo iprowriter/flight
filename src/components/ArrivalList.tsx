@@ -29,6 +29,7 @@ export default function ArrivalList(props: any) {
 
 
 
+
   //this accepts data API as paramater, check for all arrival cities ...
   //..and return an array that contains unique cities.
   // (no city should appear twice)
@@ -56,12 +57,18 @@ export default function ArrivalList(props: any) {
         <Box>
           <List>
             <Grid container direction="row">
-              {destinationCity(selectedFlight).map((item, index) => (
+              {destinationCity(flightData).map((item, index) => (
                 <Grid item xs={6} md={4} lg={4} key={index}>
                   <ListItem>
-                    <Button onClick={handleSelectedCountry} value={item}>
-                      {item}
-                    </Button>
+                    {selectedFlight.some((value) =>  value.destinationCity.toLowerCase().includes(item.toLowerCase())
+                    ) ? 
+                    <Button onClick={handleSelectedCountry} value={item} >
+                    {item}
+                  </Button>
+                    : <Button onClick={handleSelectedCountry} value={item} disabled>
+                    {item}
+                  </Button>
+                    }
                   </ListItem>
                 </Grid>
               ))}
