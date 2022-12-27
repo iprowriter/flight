@@ -38,7 +38,7 @@ export default function ArrivalList(props: any) {
       return item.destinationCity;
     });
     let uniqueCities: string[] = [];
-    allCities.map((item: any) => {
+    allCities.forEach((item: any) => {
       if (!uniqueCities.includes(item)) {
         return uniqueCities.push(item);
       }

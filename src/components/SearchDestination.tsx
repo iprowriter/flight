@@ -20,7 +20,7 @@ const StyledBox = styled(Box)`
 export default function SearchDestination() {
   const [focusOne, setFocusOne] = React.useState(false);
   const [focusTwo, setFocusTwo] = React.useState(false);
-  const [destination, setDestination] = React.useState("");
+  const [departure, setDeparture] = React.useState("");
   const [arrival, setArrival] = React.useState("");
 
   const  dispatch = useDispatch();
@@ -28,7 +28,7 @@ export default function SearchDestination() {
 
   //function gets the  value from a child component (DepatureList) and save the  value on Redux
   const getDestinationCountry = (value: string) => {
-    setDestination(value);
+    setDeparture(value);
     dispatch(userDeparture(value))
   };
 
@@ -40,15 +40,22 @@ export default function SearchDestination() {
 
   //function that shows the value of both destination and arrival countries
   const getDestinationAndArrival = () => {
-    if (destination === "") {
+    if (departure === "") {
       alert("please add destination")
     } else if (arrival === "") {
       alert("please add arrival")
     }  else {
       alert("success")
     }
-    console.log(destination, arrival)
+    console.log(departure, arrival)
   }
+
+  //This function automatically activate destination inputBox after the user selects departure city from the UI.
+  const activateDestination = () => {
+    setFocusOne(false)
+    setFocusTwo(true)
+  }
+
 
 
 
@@ -71,7 +78,7 @@ export default function SearchDestination() {
             setFocusOne(true);
             setFocusTwo(false);
           }}
-          value={destination}
+          value={departure}
         />
         <TextField
           id="filled-basic"
@@ -95,7 +102,7 @@ export default function SearchDestination() {
           Search Flights
         </Button>
       </Box>
-      {focusOne && <DepatureList getDestination={getDestinationCountry} />}
+      {focusOne && <DepatureList getDestination={getDestinationCountry} activateDestination={activateDestination}  />}
       {focusTwo && <ArrivalList getArrival={getArrivalCountry} />}
     </StyledBox>
   );

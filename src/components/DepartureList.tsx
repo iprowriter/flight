@@ -22,7 +22,7 @@ export default function DepatureList(props: any) {
       return item.departureCity;
     });
     let uniqueCities: string[] = [];
-    allCities.map((item: any) => {
+    allCities.forEach((item: any) => {
       if (!uniqueCities.includes(item)) {
         return uniqueCities.push(item);
       }
@@ -30,12 +30,15 @@ export default function DepatureList(props: any) {
     return uniqueCities;
   }
 
-  console.log(departureCity(flightData));
-
+//handleSelectedCountry pass the value of the selected departureCity to the parent component - "SearchDestination"
   const handleSelectedCountry = (e: any) => {
     const value = e.target.value;
     props.getDestination(value);
+    props.activateDestination()
   };
+
+
+ 
 
   return (
     <StyledContainer>

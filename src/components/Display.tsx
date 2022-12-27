@@ -37,15 +37,13 @@ export default function Display() {
       return item;
   });
 
-  console.log(selectedDeparture, selectedDestination)
-  console.log("selected location: ", selectedFlight)
-
+ 
   
 
   return (
     <StyledContainer>
       {selectedFlight.map((item) => (
-        <Paper elevation={2} sx={{ marginTop: "45px" }}>
+        <Paper elevation={2} sx={{ marginTop: "45px" }} key={item.id}>
           <Grid container spacing={2}>
             <Grid item xs={12} md={2} lg={2} borderRight={2} bgcolor="">
               <Box>
