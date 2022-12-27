@@ -7,6 +7,8 @@ import { styled } from "@mui/material/styles";
 import { Button, Container, Grid } from "@mui/material";
 import { iFlightData } from "../common/interfaces";
 import { flightData } from "../flightData";
+import type { RootState } from "../redux/store";
+import { useSelector } from "react-redux";
 
 const StyledContainer = styled(Container)`
   margin-top: 10px;
@@ -14,6 +16,19 @@ const StyledContainer = styled(Container)`
 `;
 
 export default function ArrivalList(props: any) {
+  let selectedDeparture = useSelector((state: RootState) => state.flight.departure)
+
+  const selectedFlight = flightData.filter((item) => {
+    if (
+      item.departureCity
+        .toLowerCase()
+        .includes(selectedDeparture.toLowerCase())  
+    )
+      return item;
+  });
+
+
+
   //this accepts data API as paramater, check for all arrival cities ...
   //..and return an array that contains unique cities.
   // (no city should appear twice)
@@ -41,7 +56,7 @@ export default function ArrivalList(props: any) {
         <Box>
           <List>
             <Grid container direction="row">
-              {destinationCity(flightData).map((item, index) => (
+              {destinationCity(selectedFlight).map((item, index) => (
                 <Grid item xs={6} md={4} lg={4} key={index}>
                   <ListItem>
                     <Button onClick={handleSelectedCountry} value={item}>

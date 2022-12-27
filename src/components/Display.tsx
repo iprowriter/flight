@@ -20,7 +20,8 @@ export default function Display() {
 
 
 
-  let selectedDestination = useSelector((state: RootState) => state.flight.departure)
+  let selectedDeparture = useSelector((state: RootState) => state.flight.departure)
+  let selectedDestination = useSelector((state: RootState) => state.flight.destination)
 
 
 
@@ -28,11 +29,15 @@ export default function Display() {
     if (
       item.departureCity
         .toLowerCase()
+        .includes(selectedDeparture.toLowerCase()) && item.destinationCity
+        .toLowerCase()
         .includes(selectedDestination.toLowerCase())
+        
     )
       return item;
   });
 
+  console.log(selectedDeparture, selectedDestination)
   console.log("selected location: ", selectedFlight)
 
   
