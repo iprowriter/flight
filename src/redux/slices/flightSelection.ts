@@ -2,11 +2,13 @@ import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 
 export interface flightSelectionState {
-  value: string
+  departure: string,
+  destination: string
 }
 
 const initialState: flightSelectionState = {
-  value: "",
+  departure: "",
+  destination: "",
 }
 
 export const flightSlice= createSlice({
@@ -15,11 +17,11 @@ export const flightSlice= createSlice({
   reducers: {
   
     userDeparture: (state, action: PayloadAction<string>) => {
-      state.value = action.payload
+      state.departure = action.payload
     },
 
     userDestination: (state, action: PayloadAction<string>) => {
-      state.value = action.payload
+      state.destination = action.payload
     },
   },
 })

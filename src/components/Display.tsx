@@ -5,11 +5,11 @@ import {
   Button,
   Container,
   Grid,
-  List,
-  ListItem,
   Typography,
 } from "@mui/material";
 import { flightData } from "../flightData";
+import type { RootState } from "../redux/store";
+import { useSelector } from "react-redux";
 
 const StyledContainer = styled(Container)`
   margin-top: 20px;
@@ -17,13 +17,29 @@ const StyledContainer = styled(Container)`
 `;
 
 export default function Display() {
-  let selectedDestination = "Qatar";
+
+
+
+  let selectedDestination = useSelector((state: RootState) => state.flight.departure)
+
+
+
+  const selectedFlight = flightData.filter((item) => {
+    if (
+      item.departureCity
+        .toLowerCase()
+        .includes(selectedDestination.toLowerCase())
+    )
+      return item;
+  });
+
+  console.log("selected location: ", selectedFlight)
 
   
 
   return (
     <StyledContainer>
-      {flightData.map((item) => (
+      {selectedFlight.map((item) => (
         <Paper elevation={2} sx={{ marginTop: "45px" }}>
           <Grid container spacing={2}>
             <Grid item xs={12} md={2} lg={2} borderRight={2} bgcolor="">
@@ -86,14 +102,14 @@ export default function Display() {
                   >
                     <Box>
                       <Grid>
-                        <Typography variant="h4">18:30</Typography>
+                        <Typography variant="h4">{item.arrivalTime} </Typography>
                       </Grid>
                       <Grid>
-                        <Typography>LON</Typography>
+                        <Typography>{item.code + item.flightCode} </Typography>
                       </Grid>
                       <Grid>
                         <Typography>
-                          <b>London</b>
+                          <b>{item.destinationCity} </b>
                         </Typography>
                       </Grid>
                     </Box>
