@@ -22,6 +22,7 @@ export default function SearchDestination() {
   const [focusTwo, setFocusTwo] = React.useState(false);
   const [departure, setDeparture] = React.useState("");
   const [arrival, setArrival] = React.useState("");
+  const [disabled, setDisabled] = React.useState(true);
 
   const  dispatch = useDispatch();
 
@@ -55,6 +56,12 @@ export default function SearchDestination() {
     setFocusOne(false)
     setFocusTwo(true)
   }
+
+  //function that enables the disabled search flight button
+  React.useEffect(() => {
+    if (departure !== "" && arrival !== "")
+    setDisabled(false)
+  }, [arrival, departure])
 
 
 
@@ -98,6 +105,7 @@ export default function SearchDestination() {
             setFocusTwo(false);
             getDestinationAndArrival();
           }}
+          disabled={disabled}
         >
           Search Flights
         </Button>
