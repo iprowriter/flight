@@ -7,4 +7,13 @@ To run this project, simply clone the repo and then do `npm install` on the root
 
 The project will start on localhost:3000
 
+# Techstack Used so Far
+1. Figma (for designing the UI)
+2. React
+3. TypeScript
+4. REST API
+5. Redux (for managing state)
+
+NodeJs and Express backend are yet to be implemented
+
 Thank you and check back later for a finished project
