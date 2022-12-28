@@ -18,6 +18,7 @@ const StyledContainer = styled(Container)`
 export default function ArrivalList(props: any) {
   let selectedDeparture = useSelector((state: RootState) => state.flight.departure)
 
+  //Data is filtered to return only the cities that matches user's departure city selection
   const selectedFlight = flightData.filter((item) => {
     if (
       item.departureCity
@@ -46,6 +47,7 @@ export default function ArrivalList(props: any) {
     return uniqueCities;
   }
 
+  //this is a prop coming from the parent component
   const handleSelectedCountry = (e: any) => {
     const value = e.target.value;
     props.getArrival(value);

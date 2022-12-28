@@ -6,13 +6,23 @@ import SnackBar from './components/Snackbar';
 
 
 function App() {
+
+  //a function that check if departureCity and destinationCity is selected before displaying flights results
+  const  [toAndFroSelected, setToAndFroSelected] = React.useState(false)
+
+  const handleToAndFroSelected = () => {
+    setToAndFroSelected(true)
+  }
+  
+
+
   return (
     <>
     <Header />
      <p>one task per day</p>
-     <SearchDestination/>
+     <SearchDestination handleToAndFroSelected={handleToAndFroSelected}/>
      <SnackBar/>
-     <Display/>
+     {toAndFroSelected && <Display/>}
     </>
   );
 }

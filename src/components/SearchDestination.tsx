@@ -19,7 +19,7 @@ const StyledBox = styled(Box)`
   text-align: center;
 `;
 
-export default function SearchDestination() {
+export default function SearchDestination(props:  any) {
   const [focusOne, setFocusOne] = React.useState(false);
   const [focusTwo, setFocusTwo] = React.useState(false);
   const [departure, setDeparture] = React.useState("");
@@ -40,17 +40,6 @@ export default function SearchDestination() {
     dispatch(userDestination(value));
   };
 
-  //function that shows the value of both destination and arrival countries
-  const getDestinationAndArrival = () => {
-    if (departure === "") {
-      alert("please add destination");
-    } else if (arrival === "") {
-      alert("please add arrival");
-    } else {
-      alert("success");
-    }
-    console.log(departure, arrival);
-  };
 
   //This function automatically activate destination inputBox after the user selects departure city from the UI.
   const activateDestination = () => {
@@ -75,7 +64,12 @@ export default function SearchDestination() {
     }
   };
 
-  console.log(departure);
+  //a function that checks if Destination is selected before activating search result. It  is a prop from APP.tsx component
+  const checkSelection =  () => {
+    if (arrival !== "")
+    props.handleToAndFroSelected()
+  }
+
 
   return (
     <StyledBox>
@@ -94,6 +88,7 @@ export default function SearchDestination() {
           onFocus={() => {
             setFocusOne(true);
             setFocusTwo(false);
+            setArrival("")
           }}
           value={departure}
         />
@@ -111,7 +106,7 @@ export default function SearchDestination() {
           onClick={() => {
             setFocusOne(false);
             setFocusTwo(false);
-            getDestinationAndArrival();
+            checkSelection();
           }}
           disabled={disabled}
         >
