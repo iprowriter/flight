@@ -5,10 +5,12 @@ import Button from "@mui/material/Button";
 import { styled } from "@mui/material/styles";
 import DepatureList from "./DepartureList";
 import ArrivalList from "./ArrivalList";
-import { useDispatch } from 'react-redux'
-import { userDeparture,  userDestination } from "../redux/slices/flightSelection";
-
-
+import { useDispatch } from "react-redux";
+import {
+  userDeparture,
+  userDestination,
+} from "../redux/slices/flightSelection";
+import SnackBar from "./Snackbar";
 
 const StyledBox = styled(Box)`
   background-color: aliceblue;
@@ -24,48 +26,56 @@ export default function SearchDestination() {
   const [arrival, setArrival] = React.useState("");
   const [disabled, setDisabled] = React.useState(true);
 
-  const  dispatch = useDispatch();
-
+  const dispatch = useDispatch();
 
   //function gets the  value from a child component (DepatureList) and save the  value on Redux
   const getDestinationCountry = (value: string) => {
     setDeparture(value);
-    dispatch(userDeparture(value))
+    dispatch(userDeparture(value));
   };
 
   //function gets the value frorm a child component (ArrivalList) and save the  value on Redux
   const getArrivalCountry = (value: string) => {
     setArrival(value);
-    dispatch(userDestination(value))
+    dispatch(userDestination(value));
   };
 
   //function that shows the value of both destination and arrival countries
   const getDestinationAndArrival = () => {
     if (departure === "") {
-      alert("please add destination")
+      alert("please add destination");
     } else if (arrival === "") {
-      alert("please add arrival")
-    }  else {
-      alert("success")
+      alert("please add arrival");
+    } else {
+      alert("success");
     }
-    console.log(departure, arrival)
-  }
+    console.log(departure, arrival);
+  };
 
   //This function automatically activate destination inputBox after the user selects departure city from the UI.
   const activateDestination = () => {
-    setFocusOne(false)
-    setFocusTwo(true)
-  }
+    setFocusOne(false);
+    setFocusTwo(true);
+  };
 
   //function that enables the disabled search flight button
   React.useEffect(() => {
-    if (departure !== "" && arrival !== "")
-    setDisabled(false)
-  }, [arrival, departure])
+    if (departure !== "" && arrival !== "") setDisabled(false);
+  }, [arrival, departure]);
 
+  //this function ensures that the user does not select destination before departure location.
+  const checkDepartureFirst = () => {
+    if (departure === "") {
+      alert("please select departure first");
+      setFocusTwo(false);
+      setFocusOne(true);
+    } else {
+      setFocusTwo(true);
+      setFocusOne(false);
+    }
+  };
 
-
-
+  console.log(departure);
 
   return (
     <StyledBox>
@@ -91,11 +101,9 @@ export default function SearchDestination() {
           id="filled-basic"
           label="Arrive At"
           variant="filled"
-          onFocus={() => {
-            setFocusTwo(true);
-            setFocusOne(false);
-          }}
+          onFocus={() => {checkDepartureFirst()}}
           value={arrival}
+          onChange={checkDepartureFirst}
         />
         <Button
           variant="contained"
@@ -110,7 +118,12 @@ export default function SearchDestination() {
           Search Flights
         </Button>
       </Box>
-      {focusOne && <DepatureList getDestination={getDestinationCountry} activateDestination={activateDestination}  />}
+      {focusOne && (
+        <DepatureList
+          getDestination={getDestinationCountry}
+          activateDestination={activateDestination}
+        />
+      )}
       {focusTwo && <ArrivalList getArrival={getArrivalCountry} />}
     </StyledBox>
   );

@@ -4,7 +4,7 @@ import Box from "@mui/material/Box";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import { styled } from "@mui/material/styles";
-import { Button, Container, Grid } from "@mui/material";
+import { Button, Container, Divider, Grid, Typography } from "@mui/material";
 import { flightData } from "../flightData";
 import { iFlightData } from "../common/interfaces";
 
@@ -44,6 +44,12 @@ export default function DepatureList(props: any) {
     <StyledContainer>
       <Paper elevation={2}>
         <Box>
+          <Box mt={0}>
+          <Typography variant="subtitle1"  gutterBottom>
+            Please select the city you are flying from:
+            </Typography>
+          </Box>
+          <Divider />
           <List>
             <Grid container direction="row">
               {departureCity(flightData).map((item, index) => (

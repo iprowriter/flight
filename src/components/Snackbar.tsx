@@ -35,7 +35,7 @@ export default function SnackBar() {
         variant="contained"
         onClick={handleClick({
           vertical: "bottom",
-          horizontal: "right",
+          horizontal: "left",
         })}
       >
         Test snackbar
@@ -44,7 +44,7 @@ export default function SnackBar() {
         autoHideDuration={5000}
         open={open}
         onClose={handleClose}
-        sx={{ width: "40%" }}
+        sx={{ width: "20%" }}
         anchorOrigin={{ vertical, horizontal }}
       >
         <Alert onClose={handleClose} severity="error" sx={{ width: "100%" }}>
