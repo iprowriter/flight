@@ -26,7 +26,6 @@ function App() {
   return (
     <>
       <Header />
-      <p>one task per day</p>
       <SearchDestination handleToAndFroSelected={handleToAndFroSelected} />
       <SnackBar />
       {toAndFroSelected && <Display />}

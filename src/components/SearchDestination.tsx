@@ -17,6 +17,8 @@ const StyledBox = styled(Box)`
   color: darkslategray;
   padding: 2rem;
   text-align: center;
+  height: 300px;
+  background-image: https://images.pexels.com/photos/2479635/pexels-photo-2479635.jpeg?auto=compress&cs=tinysrgb&w=1600;
 `;
 
 export default function SearchDestination(props:  any) {
