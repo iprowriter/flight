@@ -48,9 +48,13 @@ export default function SearchDestination(props:  any) {
   };
 
   //function that enables the disabled search flight button
+  //the dispatch UserDestination here is used to know when user changed departureCity, this ensures the arrival of... 
+  //...destination becomes empty string
   React.useEffect(() => {
-    if (departure !== "" && arrival !== "") setDisabled(false);
-  }, [arrival, departure]);
+    if (departure !== "" && arrival !== "") 
+    setDisabled(false);
+    dispatch(userDestination(arrival))
+  }, [arrival, departure, dispatch]);
 
   //this function ensures that the user does not select destination before departure location.
   const checkDepartureFirst = () => {
