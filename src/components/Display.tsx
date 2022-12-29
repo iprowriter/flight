@@ -18,12 +18,8 @@ const StyledContainer = styled(Container)`
 
 export default function Display() {
 
-
-
   let selectedDeparture = useSelector((state: RootState) => state.flight.departure)
   let selectedDestination = useSelector((state: RootState) => state.flight.destination)
-
-
 
   const selectedFlight = flightData.filter((item) => {
     if (
@@ -37,8 +33,6 @@ export default function Display() {
       return item;
   });
 
- 
-  
 
   return (
     <StyledContainer>

@@ -18,7 +18,9 @@ const StyledBox = styled(Box)`
   padding: 2rem;
   text-align: center;
   height: 300px;
-  background-image: https://images.pexels.com/photos/2479635/pexels-photo-2479635.jpeg?auto=compress&cs=tinysrgb&w=1600;
+  background-size: contain;
+  background: url(https://images.pexels.com/photos/358319/pexels-photo-358319.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+
 `;
 
 export default function SearchDestination(props:  any) {
@@ -82,7 +84,7 @@ export default function SearchDestination(props:  any) {
       <Box
         component="form"
         sx={{
-          "& > :not(style)": { m: 1, width: "45ch" },
+          "& > :not(style)": { m: 1, width: "45ch" }
         }}
         noValidate
         autoComplete="off"

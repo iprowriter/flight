@@ -2,9 +2,9 @@ import React from "react";
 import Header from "./components/Header";
 import SearchDestination from "./components/SearchDestination";
 import Display from "./components/Display";
-import SnackBar from "./components/Snackbar";
 import { useSelector } from "react-redux";
 import { RootState } from "./redux/store";
+import DiscoverCard from "./components/DiscoverCard";
 
 function App() {
   const selectedDestination = useSelector(
@@ -27,8 +27,8 @@ function App() {
     <>
       <Header />
       <SearchDestination handleToAndFroSelected={handleToAndFroSelected} />
-      <SnackBar />
       {toAndFroSelected && <Display />}
+      <DiscoverCard/>
     </>
   );
 }
