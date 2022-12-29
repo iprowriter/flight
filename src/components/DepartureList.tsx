@@ -44,9 +44,9 @@ export default function DepatureList(props: any) {
     <StyledContainer>
       <Paper elevation={2}>
         <Box>
-          <Box mt={0}>
-          <Typography variant="subtitle1"  gutterBottom>
-            Please select the city you are flying from:
+          <Box pt={1} sx={{"background-color": "#F8F9FC"}}>
+          <Typography variant="subtitle1"  >
+            <b>Please select the city you are flying from:</b>
             </Typography>
           </Box>
           <Divider />

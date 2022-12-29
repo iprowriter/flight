@@ -4,7 +4,7 @@ import Box from "@mui/material/Box";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import { styled } from "@mui/material/styles";
-import { Button, Container, Grid } from "@mui/material";
+import { Button, Container, Divider, Grid, Typography } from "@mui/material";
 import { iFlightData } from "../common/interfaces";
 import { flightData } from "../flightData";
 import type { RootState } from "../redux/store";
@@ -57,6 +57,12 @@ export default function ArrivalList(props: any) {
     <StyledContainer>
       <Paper elevation={2}>
         <Box>
+        <Box pt={1} sx={{"background-color": "#F8F9FC"}}>
+          <Typography variant="subtitle1"  >
+            <b>Please select the city you are flying To:</b>
+            </Typography>
+          </Box>
+          <Divider />
           <List>
             <Grid container direction="row">
               {destinationCity(flightData).map((item, index) => (
