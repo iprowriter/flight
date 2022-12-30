@@ -42,7 +42,7 @@ export default function Price() {
                             <Grid container marginY={2} justifyContent="center" alignItems="center"  direction={"column"}>
                                 <Box marginY={1}>
                                 <Typography>
-                                <Chip label="Berlin-London" color="success" variant="outlined" />
+                                <Chip label="Berlin  -  London" color="success" variant="outlined" />
                                 </Typography>
                                 </Box>
                                <Box>
@@ -55,6 +55,11 @@ export default function Price() {
                                 </Typography>
                                 <Typography>
                                     LH2355
+                                </Typography>
+                            </Grid>
+                            <Grid container marginY={1} paddingX={1} justifyContent="center" alignItems="center">
+                                <Typography variant="h3">
+                                €110
                                 </Typography>
                             </Grid>
                             <Grid marginY={1} paddingX={1}>
