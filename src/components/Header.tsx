@@ -23,7 +23,7 @@ export default function ButtonAppBar() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Flighter
+            PrivateJet Booker
           </Typography>
           <Button color="inherit">Book Flight</Button>
           <Button color="inherit">Discover Deals</Button>

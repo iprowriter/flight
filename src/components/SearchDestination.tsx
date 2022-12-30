@@ -10,17 +10,18 @@ import {
   userDeparture,
   userDestination,
 } from "../redux/slices/flightSelection";
+import ReusableSnackbar from "./ReusableSnackbar";
 
 const StyledBox = styled(Box)`
-  background-color: aliceblue;
+  
   color: darkslategray;
   padding: 2rem;
   text-align: center;
   min-height: 300px;
-  background: url(https://images.pexels.com/photos/358319/pexels-photo-358319.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+  background: url(https://tinyurl.com/b6krxha7);
   background-size: cover;
   background-position: center ;
-`;
+  `;
 
 export default function SearchDestination(props:  any) {
   const [focusOne, setFocusOne] = React.useState(false);
@@ -59,10 +60,25 @@ export default function SearchDestination(props:  any) {
     dispatch(userDestination(arrival))
   }, [arrival, departure, dispatch]);
 
+  //these functions calls snackbar component to show error message. Snackbar is created as a reuseable component
+  const [open, setOpen] = React.useState(false);
+
+  const handleSnackBarOpen = () => {
+    setOpen(true);
+  };
+
+  const handleSnackBarClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    setOpen(false);
+  };
+
+
   //this function ensures that the user does not select destination before departure location.
   const checkDepartureFirst = () => {
     if (departure === "") {
-      alert("please select departure first");
+      handleSnackBarOpen();
       setFocusTwo(false);
       setFocusOne(true);
     } else {
@@ -127,6 +143,10 @@ export default function SearchDestination(props:  any) {
         />
       )}
       {focusTwo && <ArrivalList getArrival={getArrivalCountry} />}
+      <ReusableSnackbar open={open} 
+      handleSnackBarOpen={handleSnackBarOpen} 
+      handleSnackBarClose={handleSnackBarClose} 
+      message="Please select departure first"/>
     </StyledBox>
   );
 }
