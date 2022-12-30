@@ -74,7 +74,7 @@ export default function Display() {
                     <Box>
                       <Grid>
                         <Typography variant="h4">
-                          {item.departureTime}{" "}
+                          {item.departureTime}
                         </Typography>
                       </Grid>
                       <Grid>

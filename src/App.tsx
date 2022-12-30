@@ -5,6 +5,7 @@ import Display from "./components/Display";
 import { useSelector } from "react-redux";
 import { RootState } from "./redux/store";
 import DiscoverCard from "./components/DiscoverCard";
+import Price from "./components/Price";
 
 function App() {
   const selectedDestination = useSelector(
@@ -29,6 +30,7 @@ function App() {
       <SearchDestination handleToAndFroSelected={handleToAndFroSelected} />
       {toAndFroSelected && <Display />}
       <DiscoverCard/>
+      <Price />
     </>
   );
 }
