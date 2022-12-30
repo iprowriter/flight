@@ -24,7 +24,8 @@ export default function Price() {
     return(
         <StyledContainer>
             <Paper elevation={2} sx={{ marginTop: "45px" }} >
-                <Grid  container direction="row" justifyContent="center"
+               <Grid  padding={2}>
+               <Grid  container direction="row" justifyContent="center"
                     alignItems="center" >
                     <Grid item  xs={12} md={3} lg={3} sx={{backgroundColor: "aliceblue", margin: "2" }}>
                         <Box>
@@ -38,33 +39,37 @@ export default function Price() {
                             <Grid>
                             <Divider color="primary" />
                             </Grid>
-                            <Box>
-                                <Grid marginY={1}>
+                            <Grid container marginY={2} justifyContent="center" alignItems="center"  direction={"column"}>
+                                <Box marginY={1}>
                                 <Typography>
                                 <Chip label="Berlin-London" color="success" variant="outlined" />
                                 </Typography>
-                                </Grid>
-                                <Typography>
+                                </Box>
+                               <Box>
+                               <Typography>
                                     12:30 - 15:30
                                 </Typography>
+                               </Box>
                                 <Typography>
                                     2hrs
                                 </Typography>
                                 <Typography>
                                     LH2355
                                 </Typography>
-                            </Box>
+                            </Grid>
                             <Grid marginY={1} paddingX={1}>
                                 <Button variant="contained" fullWidth>Select</Button>
                             </Grid>
-                            <Box marginY={2}>
-                                <Typography variant="subtitle1" >
+                            <Grid container marginY={4} justifyContent="center" alignItems="center">
+                                <Typography>
                                     <i>
-                                    Cheaper prices, same unbeatable quality
+                                    Cheaper prices - same high quality
                                     </i>
                                 </Typography>
-                                <Divider/>
-                            </Box>
+                            </Grid>
+                            <Grid>
+                            <Divider variant="middle"/>
+                            </Grid>
                             <Grid>
                                 <List>
                                     <ListItem>
@@ -119,6 +124,8 @@ export default function Price() {
                     <Grid item  xs={12} md={3} lg={3}> something</Grid>
                     <Grid item  xs={12} md={3} lg={3} sx={{backgroundColor: "aliceblue"}}> something</Grid>
                 </Grid>
+
+               </Grid>
             </Paper>
         </StyledContainer>
     )
