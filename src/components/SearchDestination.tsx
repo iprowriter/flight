@@ -10,17 +10,16 @@ import {
   userDeparture,
   userDestination,
 } from "../redux/slices/flightSelection";
-import SnackBar from "./Snackbar";
 
 const StyledBox = styled(Box)`
   background-color: aliceblue;
   color: darkslategray;
   padding: 2rem;
   text-align: center;
-  height: 300px;
-  background-size: contain;
+  min-height: 300px;
   background: url(https://images.pexels.com/photos/358319/pexels-photo-358319.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
-
+  background-size: cover;
+  background-position: center ;
 `;
 
 export default function SearchDestination(props:  any) {
