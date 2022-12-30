@@ -16,3 +16,10 @@ export interface iFlightData {
     arrival: string,
     travelTime?: number 
 }
+
+export interface iCities {
+    city: string,
+    imageURL: string,
+    price: number
+  
+  }

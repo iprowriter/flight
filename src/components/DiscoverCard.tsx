@@ -1,12 +1,11 @@
-import * as React from "react";
 import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
-import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
 import { styled } from "@mui/material/styles";
-import { Button, Container, Grid, Typography, Divider } from "@mui/material";
+import { Container, Grid, Typography, Divider } from "@mui/material";
+import { iCities } from "../common/interfaces";
 
 
 const StyledContainer = styled(Container)`
@@ -47,12 +46,7 @@ const cities = [{
 
 ]
 
-interface iCities {
-  city: string,
-  imageURL: string,
-  price: number
 
-}
 
 
 export function CityCard({city, imageURL,  price}: iCities) {
@@ -66,11 +60,11 @@ export function CityCard({city, imageURL,  price}: iCities) {
         alt="city image"
       />
       <CardContent>
-        <Box justifyContent="right" alignItems="right">
-          <Typography variant="h4" color="text.secondary">
-          €{price}
+        <Grid container justifyContent="right" alignItems="right">
+        <Typography variant="h4" color="primary">
+          €{price} 
           </Typography>
-        </Box>
+        </Grid>
       </CardContent>
     </Card>
   );
@@ -86,11 +80,13 @@ export default function DiscoverCard() {
       </StyledContainer>
       <Divider variant="middle"/>
       <StyledContainer>
+        <Grid container direction="row">
         {cities.map((item) => (
-          <Grid>
+            <Grid item xs={12} md={4} lg={4}>
             <CityCard city={item.city} imageURL={item.imageUrl} price={item.price} />
-          </Grid>
+            </Grid>
         ))}
+        </Grid>
       </StyledContainer>
     </Box>
   );
