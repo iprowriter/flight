@@ -91,7 +91,7 @@ export default function Price() {
                                             <CommitIcon color="primary" />
                                         </ListItemIcon>
                                         <ListItemText>
-                                            Normal check-in
+                                            1 checked bag (15kg)
                                         </ListItemText>
                                     </ListItem>
                                     <Divider light />
@@ -100,7 +100,7 @@ export default function Price() {
                                             <CommitIcon color="action" />
                                         </ListItemIcon>
                                         <ListItemText>
-                                            Normal check-in
+                                            Meal & beverages
                                         </ListItemText>
                                     </ListItem>
                                     <Divider light />
@@ -109,7 +109,7 @@ export default function Price() {
                                             <CommitIcon color="info" />
                                         </ListItemIcon>
                                         <ListItemText>
-                                            Normal check-in
+                                            No seat reservation
                                         </ListItemText>
                                     </ListItem>
                                     <Divider light />
@@ -118,7 +118,7 @@ export default function Price() {
                                             <CommitIcon color="success" />
                                         </ListItemIcon>
                                         <ListItemText>
-                                            Normal check-in
+                                            No rebooking or refund
                                         </ListItemText>
                                     </ListItem>
                                     
@@ -181,7 +181,7 @@ export default function Price() {
                                             <CommitIcon color="warning" />
                                         </ListItemIcon>
                                         <ListItemText>
-                                            Normal check-in
+                                            Faster check-in
                                         </ListItemText>
                                     </ListItem>
                                     <Divider light />
@@ -190,7 +190,7 @@ export default function Price() {
                                             <CommitIcon color="primary" />
                                         </ListItemIcon>
                                         <ListItemText>
-                                            Normal check-in
+                                            2 checked bags (23kg)
                                         </ListItemText>
                                     </ListItem>
                                     <Divider light />
@@ -199,7 +199,7 @@ export default function Price() {
                                             <CommitIcon color="action" />
                                         </ListItemIcon>
                                         <ListItemText>
-                                            Normal check-in
+                                            Meals & beverages
                                         </ListItemText>
                                     </ListItem>
                                     <Divider light />
@@ -208,7 +208,7 @@ export default function Price() {
                                             <CommitIcon color="info" />
                                         </ListItemIcon>
                                         <ListItemText>
-                                            Normal check-in
+                                            Paid seat reservation
                                         </ListItemText>
                                     </ListItem>
                                     <Divider light />
@@ -217,7 +217,7 @@ export default function Price() {
                                             <CommitIcon color="success" />
                                         </ListItemIcon>
                                         <ListItemText>
-                                            Normal check-in
+                                            Rebooking available
                                         </ListItemText>
                                     </ListItem>
                                     
@@ -280,7 +280,7 @@ export default function Price() {
                                             <CommitIcon color="warning" />
                                         </ListItemIcon>
                                         <ListItemText>
-                                            Normal check-in
+                                            Priority check-in
                                         </ListItemText>
                                     </ListItem>
                                     <Divider light />
@@ -289,7 +289,7 @@ export default function Price() {
                                             <CommitIcon color="primary" />
                                         </ListItemIcon>
                                         <ListItemText>
-                                            Normal check-in
+                                            4 checked bags (32kg)
                                         </ListItemText>
                                     </ListItem>
                                     <Divider light />
@@ -298,7 +298,7 @@ export default function Price() {
                                             <CommitIcon color="action" />
                                         </ListItemIcon>
                                         <ListItemText>
-                                            Normal check-in
+                                            Meals & beverages
                                         </ListItemText>
                                     </ListItem>
                                     <Divider light />
@@ -307,7 +307,7 @@ export default function Price() {
                                             <CommitIcon color="info" />
                                         </ListItemIcon>
                                         <ListItemText>
-                                            Normal check-in
+                                            Free seat reservation
                                         </ListItemText>
                                     </ListItem>
                                     <Divider light />
@@ -316,7 +316,7 @@ export default function Price() {
                                             <CommitIcon color="success" />
                                         </ListItemIcon>
                                         <ListItemText>
-                                            Normal check-in
+                                            Rebooking & refund 
                                         </ListItemText>
                                     </ListItem>
                                     
