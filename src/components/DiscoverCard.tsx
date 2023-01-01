@@ -81,8 +81,8 @@ export default function DiscoverCard() {
       <Divider variant="middle"/>
       <StyledContainer>
         <Grid container direction="row">
-        {cities.map((item) => (
-            <Grid item xs={12} md={4} lg={4}>
+        {cities.map((item, index) => (
+            <Grid item xs={12} md={4} lg={4} key={index}>
             <CityCard city={item.city} imageURL={item.imageUrl} price={item.price} />
             </Grid>
         ))}

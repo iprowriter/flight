@@ -10,6 +10,7 @@ import {
 import { flightData } from "../flightData";
 import type { RootState } from "../redux/store";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const StyledContainer = styled(Container)`
   margin-top: 20px;
@@ -32,6 +33,9 @@ export default function Display() {
     )
       return item;
   });
+
+  //this function is used to send user to pricing page after flight selection
+  const navigate = useNavigate()
 
 
   return (
@@ -132,6 +136,7 @@ export default function Display() {
                   color="success"
                   sx={{ borderRadius: "20px" }}
                   fullWidth
+                  onClick={()=> navigate("/price")}
                 >
                   Select Flight
                 </Button>
