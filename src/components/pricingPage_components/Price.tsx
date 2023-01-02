@@ -14,7 +14,7 @@ import {
 } from "@mui/material";
 import Chip from '@mui/material/Chip';
 import CommitIcon from '@mui/icons-material/Commit';
-import { isTemplateHead } from "typescript";
+import React from "react";
 
 const StyledContainer = styled(Container)`
   margin-top: 20px;
@@ -42,7 +42,11 @@ const userFlight = [
     }
 ]
 
+
 export default function Price() {
+    const [price2, setPrice2] = React.useState(0)
+    console.log(price2)
+
     return(
         <StyledContainer>
             <Paper elevation={2} sx={{ marginTop: "45px" }} >
@@ -86,7 +90,7 @@ export default function Price() {
                             </Typography>
                         </Grid>
                         <Grid marginY={1} paddingX={1}>
-                            <Button variant="contained" fullWidth>Select</Button>
+                            <Button variant="contained" fullWidth onClick={()=> setPrice2(item.price.economy)}>Select</Button>
                         </Grid>
                         <Grid container marginY={4} justifyContent="center" alignItems="center">
                             <Typography>

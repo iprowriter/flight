@@ -11,6 +11,9 @@ import { flightData } from "../flightData";
 import type { RootState } from "../redux/store";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { userFlight } from "../redux/slices/userSelectedFlight";
+
 
 const StyledContainer = styled(Container)`
   margin-top: 20px;
@@ -22,7 +25,7 @@ export default function Display() {
   let selectedDeparture = useSelector((state: RootState) => state.flight.departure)
   let selectedDestination = useSelector((state: RootState) => state.flight.destination)
 
-  const selectedFlight = flightData.filter((item) => {
+  const displayedFlights = flightData.filter((item) => {
     if (
       item.departureCity
         .toLowerCase()
@@ -38,9 +41,16 @@ export default function Display() {
   const navigate = useNavigate()
 
 
+  //dispatching the value of selectd flight to Redux
+  const dispatch = useDispatch();
+
+
+  console.log("displayed flights are: ", displayedFlights)
+
+
   return (
     <StyledContainer>
-      {selectedFlight.map((item) => (
+      {displayedFlights.map((item) => (
         <Paper elevation={2} sx={{ marginTop: "45px" }} key={item.id}>
           <Grid container spacing={2}>
             <Grid item xs={12} md={2} lg={2} borderRight={2} bgcolor="">
@@ -136,7 +146,7 @@ export default function Display() {
                   color="success"
                   sx={{ borderRadius: "20px" }}
                   fullWidth
-                  onClick={()=> navigate("/price")}
+                  onClick={()=> {dispatch(userFlight(item)); navigate("/price")}}
                 >
                   Select Flight
                 </Button>
