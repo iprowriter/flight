@@ -15,11 +15,15 @@ import {
 import Chip from '@mui/material/Chip';
 import CommitIcon from '@mui/icons-material/Commit';
 import React from "react";
+import type { RootState } from "../../redux/store";
+import { useSelector } from "react-redux";
 
 const StyledContainer = styled(Container)`
   margin-top: 20px;
   padding: 2rem;
 `;
+
+/** 
 
 const userFlight = [
     {
@@ -42,16 +46,22 @@ const userFlight = [
     }
 ]
 
+*/
 
 export default function Price() {
     const [price2, setPrice2] = React.useState(0)
     console.log(price2)
 
+
+    let userSelected = [useSelector((state: RootState) => state.userSelectedFlight.flightDetail) ]
+    console.log(userSelected)
+    
+
     return(
         <StyledContainer>
             <Paper elevation={2} sx={{ marginTop: "45px" }} >
                <Grid  padding={2}>
-               {userFlight.map((item) => (
+               {userSelected.map((item) => (
                 <Grid  container direction="row" justifyContent="center"
                 alignItems="center" sx={{gap: 5}} key={item.id}>
                 <Grid item  xs={12} md={3} lg={3} sx={{backgroundColor: "aliceblue", margin: "2" }}>

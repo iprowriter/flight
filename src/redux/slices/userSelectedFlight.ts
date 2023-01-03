@@ -4,6 +4,8 @@ import type { PayloadAction } from '@reduxjs/toolkit'
 
 
 export interface iSelectedFlight {
+    flightDetail: {
+      
     id: number,
     name: string,
     code: string,
@@ -19,11 +21,13 @@ export interface iSelectedFlight {
     arrivalTime: string,
     departure: string,
     arrival: string,
+    }
 }
 
 
 
 const initialState: iSelectedFlight = {
+    flightDetail: {
     id: 0,
     name: "",
     code: "",
@@ -39,6 +43,7 @@ const initialState: iSelectedFlight = {
     arrivalTime: "",
     departure: "",
     arrival: ""
+    }
 }
 
 export const userFlightSlice = createSlice({
@@ -47,24 +52,25 @@ export const userFlightSlice = createSlice({
   reducers: {
   
     userFlight: (state, action: PayloadAction<any>) => {
-      state.id = action.payload.id
-      state.name = action.payload.name
-      state.code = action.payload.code
-      state.destinationCity = action.payload.destinationCity
-      state.destinationCountry = action.payload.destinationCountry
-      state.departureCity = action.payload.departureCity
-      state.departureCountry = action.payload.departureCountry
-      state.price.economy = action.payload.price.economy
-      state.price.premium = action.payload.price.premium
-      state.price.business = action.payload.price.business
-      state.imageUrl = action.payload.imageUrl
-      state.flightCode = action.payload.flightCode
-      state.aircraft = action.payload.aircraft
-      state.departureTime = action.payload.departureTime
-      state.arrivalTime = action.payload.arrivalTime
-      state.departure = action.payload.departure
-      state.arrival = action.payload.arrival
-      
+    
+     state.flightDetail.id = action.payload.id
+     state.flightDetail.name = action.payload.name
+     state.flightDetail.code = action.payload.code
+     state.flightDetail.destinationCity = action.payload.destinationCity
+     state.flightDetail.destinationCountry = action.payload.destinationCountry
+     state.flightDetail.departureCity = action.payload.departureCity
+     state.flightDetail.departureCountry = action.payload.departureCountry
+     state.flightDetail.price.economy = action.payload.price.economy
+     state.flightDetail.price.premium = action.payload.price.premium
+     state.flightDetail.price.business = action.payload.price.business
+     state.flightDetail.imageUrl = action.payload.imageUrl
+     state.flightDetail.flightCode = action.payload.flightCode
+     state.flightDetail.aircraft = action.payload.aircraft
+     state.flightDetail.departureTime = action.payload.departureTime
+     state.flightDetail.arrivalTime = action.payload.arrivalTime
+     state.flightDetail.departure = action.payload.departure
+     state.flightDetail.arrival = action.payload.arrival
+         
     },
 
    
