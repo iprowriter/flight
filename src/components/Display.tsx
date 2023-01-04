@@ -49,11 +49,11 @@ export default function Display() {
 
 
   return (
-    <StyledContainer>
+    <StyledContainer >
       {displayedFlights.map((item) => (
         <Paper elevation={2} sx={{ marginTop: "45px" }} key={item.id}>
-          <Grid container spacing={2}>
-            <Grid item xs={12} md={2} lg={2} borderRight={2} bgcolor="">
+          <Grid container spacing={2} sx={{ backgroundColor: "aliceblue" }}>
+            <Grid item xs={12} md={2} lg={2} borderRight={2} >
               <Box>
                 <Grid
                   container
@@ -143,7 +143,7 @@ export default function Display() {
               <Box sx={{ width: "100%" }}>
                 <Button
                   variant="contained"
-                  color="success"
+                  color="info"
                   sx={{ borderRadius: "20px" }}
                   fullWidth
                   onClick={()=> {dispatch(userFlight(item)); navigate("/price")}}

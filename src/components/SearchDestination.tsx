@@ -132,6 +132,7 @@ export default function SearchDestination(props:  any) {
             checkSelection();
           }}
           disabled={disabled}
+          color="info"
         >
           Search Flights
         </Button>
