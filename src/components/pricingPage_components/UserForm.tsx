@@ -24,7 +24,10 @@ export function SmallCard() {
           You are almost ready to fly with us in the direction:
         </Typography>
         <Typography variant="h6" color="success" align="center">
-            Berlin - London (economy)
+            Berlin - London 
+        </Typography>
+        <Typography variant="h5" color="info.main" gutterBottom align="center">
+          $120 (economy)
         </Typography>
         <Typography variant="body2" align="center">
           Please complete the form below 

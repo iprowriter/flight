@@ -17,38 +17,19 @@ import CommitIcon from "@mui/icons-material/Commit";
 import React from "react";
 import type { RootState } from "../../redux/store";
 import { useSelector } from "react-redux";
+import Backdrop from '@mui/material/Backdrop';
+import Modal from '@mui/material/Modal';
+import Fade from '@mui/material/Fade';
+import PriceModal from "./PriceModal";
+
+
 
 const StyledContainer = styled(Container)`
   margin-top: 20px;
   padding: 2rem;
 `;
 
-//testing new project issues
 
-/** 
-
-const userFlight = [
-    {
-        id: 1,
-        name: "KLM",
-        code: "KM",
-        destinationCity: "Berlin",
-        destinationCountry: "Germany",
-        departureCity: "Amsterdam",
-        departureCountry: "Netherland",
-        price: {economy: 234, premium: 500, business: 700},
-        imageUrl: "https://tinyurl.com/2p8f8ers",
-        flightCode: 134,
-        aircraft: "Airbus A220",
-        departureTime: "12:30",
-        arrivalTime: "16:30",
-        departure: "Schiphol International Airport, Terminal I",
-        arrival: "Berlin Bradenburg Airport Terminal II",
-        travelTime: 4 
-    }
-]
-
-*/
 
 export default function Price() {
   const [price2, setPrice2] = React.useState(0);
@@ -59,8 +40,14 @@ export default function Price() {
   ];
   console.log(userSelected);
 
+  //the state management for modal in the 3 paragraphs below:
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   return (
     <StyledContainer>
+        <PriceModal open={open} handleOpen={handleOpen} handleClose={handleClose} />
       <Paper elevation={2} sx={{ marginTop: "45px" }}>
         <Grid padding={2}>
           {userSelected.map((item) => (
@@ -134,7 +121,7 @@ export default function Price() {
                     <Button
                       variant="contained"
                       fullWidth
-                      onClick={() => setPrice2(item.price.economy)}
+                      onClick={() => {setPrice2(item.price.economy); handleOpen()}}
                     >
                       Select
                     </Button>
