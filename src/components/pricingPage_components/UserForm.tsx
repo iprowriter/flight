@@ -4,7 +4,6 @@ import { Button, Container, Grid, Typography } from "@mui/material";
 import Paper from "@mui/material/Paper";
 import { styled } from "@mui/material/styles";
 import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 
 const StyledContainer = styled(Container)`
