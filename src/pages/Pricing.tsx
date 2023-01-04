@@ -1,12 +1,12 @@
 import React from "react";
-import Price1 from "../components/pricingPage_components/Price";
+import Price from "../components/pricingPage_components/Price";
 import UserForm from "../components/pricingPage_components/UserForm";
 
-export default function Price() {
+export default function Pricing() {
 
     return(
         <>
-        <Price1/>
+        <Price/>
         <UserForm/>
         </>
     )
