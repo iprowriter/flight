@@ -121,6 +121,7 @@ export default function Price() {
                     <Button
                       variant="contained"
                       fullWidth
+                      color="info"
                       onClick={() => {setPrice2(item.price.economy); handleOpen()}}
                     >
                       Select
@@ -241,6 +242,7 @@ export default function Price() {
                     <Button
                       variant="contained"
                       fullWidth
+                      color="info"
                       onClick={() => {setPrice2(item.price.premium); handleOpen()}}
                     >
                       Select
@@ -361,6 +363,7 @@ export default function Price() {
                     <Button
                       variant="contained"
                       fullWidth
+                      color="info"
                       onClick={() => {setPrice2(item.price.business); handleOpen()}}
                     >
                       Select
