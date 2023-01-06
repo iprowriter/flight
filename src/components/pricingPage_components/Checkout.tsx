@@ -77,6 +77,31 @@ export default function Checkout() {
                     </Box>
                    
                   </Grid>
+                  <Grid
+                    container
+                    marginY={1}
+                    justifyContent="center"
+                    alignItems="center"
+                    sx={{backgroundColor: "#e0e0e0"}}
+                  >
+                    <Box marginY={2}>
+                    <Typography variant="h5">
+                      <b>Flight Details</b>
+                    </Typography>
+                    <Grid>
+                        <Typography>
+                            <b>Name:</b> MARTIN OPUTA
+                        </Typography>
+                        <Typography>
+                            <b>Email:</b> MARTIN@MARTINOPUTA.COM
+                        </Typography>
+                        <Typography>
+                            <b>Address:</b> MorrisStrasse 34, Berlin, Germany.
+                        </Typography>
+                    </Grid>
+                    </Box>
+                   
+                  </Grid>
                 </Grid>
             </Paper>
         </StyledContainer>
