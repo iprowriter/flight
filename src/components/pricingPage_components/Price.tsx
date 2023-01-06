@@ -17,9 +17,6 @@ import CommitIcon from "@mui/icons-material/Commit";
 import React from "react";
 import type { RootState } from "../../redux/store";
 import { useSelector } from "react-redux";
-import Backdrop from '@mui/material/Backdrop';
-import Modal from '@mui/material/Modal';
-import Fade from '@mui/material/Fade';
 import PriceModal from "./PriceModal";
 
 
