@@ -63,15 +63,43 @@ export default function Checkout() {
                 <b>Your Details</b>
               </Typography>
               <Grid>
-                <Typography>
-                  <b>Name:</b> MARTIN OPUTA
-                </Typography>
-                <Typography>
-                  <b>Email:</b> MARTIN@MARTINOPUTA.COM
-                </Typography>
-                <Typography>
-                  <b>Address:</b> MorrisStrasse 34, Berlin, Germany.
-                </Typography>
+              <Divider/>
+                <TableContainer>
+                  <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                    <TableBody>
+                      <TableRow>
+                        <TableCell>
+                          <Typography>
+                            <b>Name:</b>
+                          </Typography>
+                        </TableCell>
+                        <TableCell>
+                          <Typography>MARTIN OPUTA</Typography>
+                        </TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell>
+                          <Typography>
+                            <b>Email:</b>
+                          </Typography>
+                        </TableCell>
+                        <TableCell>
+                          <Typography>MARTIN@MARTINOPUTA.COM</Typography>
+                        </TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell>
+                          <Typography>
+                            <b>Address:</b>
+                          </Typography>
+                        </TableCell>
+                        <TableCell>
+                          <Typography>SANTASTRASSE 34, BERLIN 04109</Typography>
+                        </TableCell>
+                      </TableRow>
+                    </TableBody>
+                  </Table>
+                </TableContainer>
               </Grid>
             </Box>
           </Grid>
