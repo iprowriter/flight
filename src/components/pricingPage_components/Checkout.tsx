@@ -27,24 +27,20 @@ export default function Checkout() {
   return (
     <StyledContainer>
       <Paper elevation={2} sx={{ marginTop: "45px" }}>
-        <Grid container justifyContent="center" alignItems="center">
+        <Box sx={{
+          display: 'flex',
+          justifyContent: 'center',
+          p: 1,
+          m: 1,
+        }}
+>
+        <Grid  sx={{ width: '60%'}}>
           <Grid
             container
             marginY={2}
             justifyContent="center"
             alignItems="center"
-          >
-            <Typography variant="h5">
-              <b>Checkout Your Order</b>
-            </Typography>
-            <Divider />
-          </Grid>
-          <Grid
-            container
-            marginY={2}
-            justifyContent="center"
-            alignItems="center"
-            sx={{ backgroundColor: "#e0e0e0" }}
+            sx={{ backgroundColor: "aliceblue" }}
           >
             <Box marginY={2}>
               <Typography variant="h5">
@@ -56,7 +52,7 @@ export default function Checkout() {
             container
             marginY={1}
             paddingX={3}
-            sx={{ backgroundColor: "#e0e0e0" }}
+            sx={{ backgroundColor: "aliceblue" }}
           >
             <Box marginY={2}>
               <Typography variant="h5">
@@ -107,7 +103,7 @@ export default function Checkout() {
             container
             marginY={1}
             paddingX={3}
-            sx={{ backgroundColor: "#e0e0e0" }}
+            sx={{ backgroundColor: "aliceblue" }}
           >
             <Box marginY={2}>
               <Typography variant="h5">
@@ -145,7 +141,7 @@ export default function Checkout() {
                           </Typography>
                         </TableCell>
                         <TableCell>
-                          <Typography>12:30 P</Typography>
+                          <Typography>12:30 </Typography>
                         </TableCell>
                       </TableRow>
                       <TableRow>
@@ -185,6 +181,7 @@ export default function Checkout() {
             </Box>
           </Grid>
         </Grid>
+        </Box>
       </Paper>
     </StyledContainer>
   );
