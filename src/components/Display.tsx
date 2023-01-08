@@ -146,7 +146,7 @@ export default function Display() {
                   color="info"
                   sx={{ borderRadius: "20px" }}
                   fullWidth
-                  onClick={()=> {dispatch(userFlight(item)); navigate("/price")}}
+                  onClick={()=> {dispatch(userFlight(item)); navigate("/steps")}}
                 >
                   Select Flight
                 </Button>

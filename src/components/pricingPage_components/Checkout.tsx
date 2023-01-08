@@ -31,7 +31,7 @@ export default function Checkout() {
             m: 1,
           }}
         >
-          <Grid sx={{ width: "62%", backgroundColor: "#e0e0e0" }}>
+          <Grid sx={{ width: "65%", backgroundColor: "#e0e0e0" }}>
             <Grid
               container
               marginY={2}

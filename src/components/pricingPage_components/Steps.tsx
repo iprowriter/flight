@@ -9,8 +9,6 @@ import Price from "./Price";
 import UserForm from "./UserForm";
 import Checkout from "./Checkout";
 import React from "react";
-import { useDispatch } from "react-redux";
-import { userActiveStep } from "../../redux/slices/stepperStage";
 import type { RootState } from "../../redux/store";
 import { useSelector } from "react-redux";
 
