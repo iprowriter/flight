@@ -18,6 +18,8 @@ import React from "react";
 import type { RootState } from "../../redux/store";
 import { useSelector } from "react-redux";
 import PriceModal from "./PriceModal";
+import { useDispatch } from "react-redux";
+import { userActiveStep } from "../../redux/slices/stepperStage";
 
 
 
@@ -41,6 +43,15 @@ export default function Price() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+  //Redux to increment activeStep used in Steps.tsx component
+  const dispatch = useDispatch();
+
+  let currentStep = useSelector((state: RootState) => state.stepperStage.activeStep)
+  
+  const incrementSteps = () => {
+    dispatch(userActiveStep(currentStep + 1))
+  }
 
   return (
     <StyledContainer>
@@ -119,7 +130,7 @@ export default function Price() {
                       variant="contained"
                       fullWidth
                       color="info"
-                      onClick={() => {setPrice2(item.price.economy); handleOpen()}}
+                      onClick={() => {setPrice2(item.price.economy); incrementSteps()}}
                     >
                       Select
                     </Button>
@@ -240,7 +251,7 @@ export default function Price() {
                       variant="contained"
                       fullWidth
                       color="info"
-                      onClick={() => {setPrice2(item.price.premium); handleOpen()}}
+                      onClick={() => {setPrice2(item.price.premium); incrementSteps()}}
                     >
                       Select
                     </Button>
@@ -361,7 +372,7 @@ export default function Price() {
                       variant="contained"
                       fullWidth
                       color="info"
-                      onClick={() => {setPrice2(item.price.business); handleOpen()}}
+                      onClick={() => {setPrice2(item.price.business); incrementSteps()}}
                     >
                       Select
                     </Button>

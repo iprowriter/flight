@@ -5,6 +5,10 @@ import Paper from "@mui/material/Paper";
 import { styled } from "@mui/material/styles";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
+import { useDispatch } from "react-redux";
+import { userActiveStep } from "../../redux/slices/stepperStage";
+import type { RootState } from "../../redux/store";
+import { useSelector } from "react-redux";
 
 const StyledContainer = styled(Container)`
   margin-top: 20px;
@@ -38,7 +42,17 @@ export function SmallCard() {
 }
 
 //this is default export for this page. It accepts card component defined on the top
-export default function userForm() {
+export default function UserForm() {
+  
+  //Redux to increment activeStep used in Steps.tsx component
+  const dispatch = useDispatch();
+
+  let currentStep = useSelector((state: RootState) => state.stepperStage.activeStep)
+  
+  const incrementSteps = () => {
+    dispatch(userActiveStep(currentStep + 1))
+  }
+
   return (
     <StyledContainer>
       <Paper elevation={2} sx={{ margin: "40px" }}>
@@ -77,7 +91,9 @@ export default function userForm() {
                 <TextField fullWidth label="address" id="fullWidth" />
               </Grid>
               <Grid item sx={{ width: "100%" }}>
-                <Button variant="contained" color="info" fullWidth>
+                <Button variant="contained" color="info" 
+                fullWidth
+                onClick={incrementSteps}>
                   Continue to Checkout
                 </Button>
               </Grid>
