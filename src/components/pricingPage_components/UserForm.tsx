@@ -46,7 +46,7 @@ export function SmallCard() {
 //this is default export for this page. It accepts card component defined on the top
 export default function UserForm() {
   
-  //Redux to increment activeStep used in Steps.tsx component
+  //Redux to increment activeStep used in Steps.tsx component.
   const dispatch = useDispatch();
 
   let currentStep = useSelector((state: RootState) => state.stepperStage.activeStep)
