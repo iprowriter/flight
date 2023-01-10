@@ -56,10 +56,10 @@ export default function UserForm() {
   }
 
   //Redux to get and set values of User Input
-  const [firstname, setFirstname] = React.useState<string>(" ")
-  const [lastname, setLastname] = React.useState<string>(" ")
-  const [email, setEmail] = React.useState<string>(" ")
-  const [address, setAddress] = React.useState<string>(" ")
+  const [firstname, setFirstname] = React.useState<string>("")
+  const [lastname, setLastname] = React.useState<string>("")
+  const [email, setEmail] = React.useState<string>("")
+  const [address, setAddress] = React.useState<string>("")
 
   React.useEffect(()=>{
     console.log(firstname, lastname, email, address)
