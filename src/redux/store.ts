@@ -2,13 +2,15 @@ import { configureStore } from '@reduxjs/toolkit'
 import flightSelection from './slices/flightSelection'
 import userSelectedFlight from './slices/userSelectedFlight'
 import stepperStage from './slices/stepperStage'
+import userFormSlice from './slices/userFormSlice'
 
 
 export const store = configureStore({
   reducer: {
     flight: flightSelection,
     userSelectedFlight: userSelectedFlight,
-    stepperStage: stepperStage
+    stepperStage: stepperStage,
+    userFormDetail: userFormSlice
   },
 })
 
