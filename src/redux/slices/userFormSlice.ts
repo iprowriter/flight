@@ -20,16 +20,23 @@ export const formSlice= createSlice({
   initialState,
   reducers: {
   
-    userFormDetail: (state, action: PayloadAction<any>) => {
-      state.firstname = action.payload.firstname
-      state.lastname = action.payload.lastname
-      state.email = action.payload.email
-      state.address = action.payload.address
+    
+    userFirstname: (state, action: PayloadAction<any>) => {
+      state.firstname = action.payload
+    },
+    userLastname: (state, action: PayloadAction<any>) => {
+      state.lastname = action.payload
+    },
+    userEmail: (state, action: PayloadAction<any>) => {
+      state.email = action.payload
+    },
+    userAddress: (state, action: PayloadAction<any>) => {
+      state.address = action.payload
     },
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { userFormDetail } = formSlice.actions
+export const { userFirstname, userEmail, userLastname,userAddress } = formSlice.actions
 
 export default formSlice.reducer

@@ -7,8 +7,10 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import { useDispatch } from "react-redux";
 import { userActiveStep } from "../../redux/slices/stepperStage";
+import { userFirstname, userLastname, userEmail, userAddress } from "../../redux/slices/userFormSlice";
 import type { RootState } from "../../redux/store";
 import { useSelector } from "react-redux";
+import React from "react";
 
 const StyledContainer = styled(Container)`
   margin-top: 20px;
@@ -53,6 +55,20 @@ export default function UserForm() {
     dispatch(userActiveStep(currentStep + 1))
   }
 
+  //Redux to get and set values of User Input
+  const [firstname, setFirstname] = React.useState<string>(" ")
+  const [lastname, setLastname] = React.useState<string>(" ")
+  const [email, setEmail] = React.useState<string>(" ")
+  const [address, setAddress] = React.useState<string>(" ")
+
+  React.useEffect(()=>{
+    console.log(firstname, lastname, email, address)
+    dispatch(userFirstname(firstname))
+    dispatch(userLastname(lastname))
+    dispatch(userEmail(email))
+    dispatch(userAddress(address))
+  },[firstname, lastname, email, address, dispatch])
+
   return (
     <StyledContainer>
       <Paper elevation={2} sx={{ margin: "40px" }}>
@@ -79,16 +95,16 @@ export default function UserForm() {
                 <SmallCard />
               </Grid>
               <Grid item sx={{ width: "100%" }}>
-                <TextField fullWidth label="firstname" id="fullWidth" />
+                <TextField fullWidth label="firstname" id="fullWidth" value={firstname} onChange={(e) => setFirstname(e.target.value)} />
               </Grid>
               <Grid item sx={{ width: "100%" }}>
-                <TextField fullWidth label="lastname" id="fullWidth" />
+                <TextField fullWidth label="lastname" id="fullWidth" value={lastname} onChange={(e) => setLastname(e.target.value)} />
               </Grid>
               <Grid item sx={{ width: "100%" }}>
-                <TextField fullWidth label="email" id="fullWidth" />
+                <TextField fullWidth label="email" id="fullWidth" value={email} onChange={(e) => setEmail(e.target.value)} />
               </Grid>
               <Grid item sx={{ width: "100%" }}>
-                <TextField fullWidth label="address" id="fullWidth" />
+                <TextField fullWidth label="address" id="fullWidth" value={address} onChange={(e) => setAddress(e.target.value)} />
               </Grid>
               <Grid item sx={{ width: "100%" }}>
                 <Button variant="contained" color="info" 
