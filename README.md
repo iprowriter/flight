@@ -13,7 +13,7 @@ The project will start on localhost:3000
 3. TypeScript
 4. REST API
 5. Redux (for managing state)
-6. Material-UI
+6. Material-UI (with Styled component)
 
 NodeJs and Express backend are yet to be implemented
 GraphQl will also be implemented instead of REST API
