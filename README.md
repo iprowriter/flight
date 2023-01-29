@@ -18,4 +18,4 @@ The project will start on localhost:3000
 NodeJs and Express backend are yet to be implemented
 GraphQl will also be implemented instead of REST API
 
-Thank you and check back later for a finished project
+Thank you and check back later for a finished project.
