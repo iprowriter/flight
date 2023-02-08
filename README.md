@@ -15,7 +15,7 @@ The project will start on localhost:3000
 5. Redux (for managing state)
 6. Material-UI (with Styled component)
 
-NodeJs and Express backend are yet to be implemented
-GraphQl will also be implemented instead of REST API
+NodeJs and Express backend are yet to be implemented.
+GraphQl will also be implemented instead of REST API.
 
 Thank you and check back later for a finished project
